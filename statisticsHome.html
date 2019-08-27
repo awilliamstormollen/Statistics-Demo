@@ -1,0 +1,105 @@
+<html>
+<head>
+<script src='Statistics.js'></script>
+<script>
+	function addNumber()
+	{
+		var input = document.getElementById('input').value;
+		var list = document.getElementById('list');
+		var option = document.createElement('option');
+		option.text = input;
+		list.options.add(option);
+	}
+	function getStatistics()
+	{
+		var list = new Array();
+		var select = document.getElementById('list');
+		for(var i = 0; i < select.options.length; i++)
+		{
+			list[i] = parseInt((select.options[i].text));
+		}
+		
+
+		document.getElementById('summation').value = findSum(list);
+		document.getElementById('mean').value = findMean(list);
+		document.getElementById('size').value = findN(list);
+		document.getElementById('median').value = findMedian(list);
+		document.getElementById('sd').value = findSD(list);
+		document.getElementById('v').value = findV(list);
+		document.getElementById('mode').value = findMode(list);
+
+
+
+	}
+</script>
+<style>
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+h2 {
+    text-align: center;
+}
+
+</style>
+
+
+<link rel="stylesheet" href="../mystyle.css" type="text/css"/>
+
+
+<title>Statistics</title>
+<link rel="stylesheet" href="mystyle.css" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<h1>Statistics</h1>
+<h2>Alexander Williams</h2>
+
+</head>
+<body>
+<p>This web page will perform calculations on user input</p>
+<table>
+	<tr>
+		<td>Input: </td><td><input type='text' id='input'></td>
+	</tr>
+	<tr>
+		<td colspan='2'><input type='button' value='Add Number' onClick='addNumber()'></td>
+	</tr>
+	<tr>
+		<td colspan='2' valign='top'>Numbers: <select id='list' size='5'></select></td>
+	</tr>
+	<tr>
+		<td colspan='2'><input type='button' value='Get Statistics' onClick='getStatistics()'></td>
+        <tr>
+                <td>Summation: </td><td><input type='text' id='summation'></td>
+        </tr>
+        <tr>
+                <td>Mean: </td><td><input type='text' id='mean'></td>
+        </tr>
+	   <tr>
+                <td>Array Size: </td><td><input type='text' id='size'></td>
+        </tr>
+	 <tr>
+                <td>Median: </td><td><input type='text' id='median'></td>
+        </tr>
+	<tr>
+                <td>Standard Deviation: </td><td><input type='text' id='sd'></td>
+        </tr>
+	<tr>
+                <td>Varience: </td><td><input type='text' id='v'></td>
+        </tr>
+	 <tr>
+                <td>Mode: </td><td><input type='text' id='mode'></td>
+        </tr>
+
+
+
+
+
+
+</table>
+<a href="../index.html"><h3>Link back to ePortfolio</h3></a>
+<a href="table.html"><h3>Link to Unit Testing Table</h3></a>
+
+</body>
+</html>
+
